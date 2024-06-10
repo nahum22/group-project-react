@@ -5,8 +5,18 @@ const DisplayCars = () => {
   // const {} = useGlobalContext();
 
   const data = [
-    { model: "w3434", manufacturer: "audi", description: "eerer", userId: "3s2" },
-    { model: "w3434", manufacturer: "audi", description: "ererere", userId: "3s" },
+    {
+      model: "w3434",
+      manufacturer: "audi",
+      description: "eerer",
+      userId: "3s2",
+    },
+    {
+      model: "w3434",
+      manufacturer: "audi",
+      description: "ererere",
+      userId: "3s",
+    },
   ];
 
   return (
