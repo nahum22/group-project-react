@@ -20,9 +20,10 @@ export const AppProvider = ({ children }) => {
         setLoading(false);
       }
     };
-
     fetchCars();
   }, [url]);
+
+  console.log(carsData);
 
 
 
