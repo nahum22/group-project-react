@@ -1,8 +1,10 @@
-import Login from "./Login";
 import DisplayCars from "./DisplayCars";
+import Login from "./Login";
+
+import "./App.css";
 
 function App() {
-  return <Login />;
+  return <DisplayCars />;
 }
 
 export default App;

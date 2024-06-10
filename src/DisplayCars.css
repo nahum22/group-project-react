@@ -1,0 +1,19 @@
+.table {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  border-collapse: collapse; 
+
+}
+td {
+  border: 1px solid black;
+  text-align: center;
+
+}
+.button{
+   border: none;
+   margin: 0 3rem;
+}

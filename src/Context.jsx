@@ -92,6 +92,8 @@ export const AppProvider = ({ children }) => {
     setCarsData(carsData.filter((car) => car.id !== id));
   };
 
+
+  console.log(carsData);
   return (
     <AppContext.Provider
       value={{
