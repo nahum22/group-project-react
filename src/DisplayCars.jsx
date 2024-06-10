@@ -4,7 +4,7 @@ import React from "react";
 import "./DisplayCars.css";
 
 const DisplayCars = () => {
-  const { loading, carsData } = useGlobalContext();
+  const { loading, carsData,removeCar } = useGlobalContext();
 
   const data = [
     {
