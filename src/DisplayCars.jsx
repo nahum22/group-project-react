@@ -4,8 +4,7 @@ import React from "react";
 import "./DisplayCars.css";
 
 const DisplayCars = () => {
-  const { carsData, error, loading, addCar, updateCar, removeCar } =
-    useGlobalContext();
+  const { carsData, error, loading, addCar, removeCar } = useGlobalContext();
 
   return (
     <table className="table">
@@ -30,7 +29,13 @@ const DisplayCars = () => {
                   <button>update</button>
                 </td>
                 <td className="button">
-                  <button>remove</button>
+                  <button
+                    onClick={() => {
+                      removeCar(car);
+                    }}
+                  >
+                    remove
+                  </button>
                 </td>
               </tr>
             );
