@@ -30,7 +30,7 @@ export const AppProvider = ({ children }) => {
   const handleAddCar = async (car) => {
     setLoading(true);
     try {
-      const response = await axios.post(`${url}/${car.id}`, car);
+      const response = await axios.post(url, car);
       setCarsData(response.data);
     } catch (error) {
       setError(error.message);
@@ -81,11 +81,7 @@ export const AppProvider = ({ children }) => {
   const addCar = (car) => {
     const newCar = {
       id: createCarId(),
-      model: car.model,
-      manufacturer: car.manufacturer,
-      year: car.year,
-      userId: car.userId,
-      description: car.description,
+      ...car,
     };
     setCarsData(...carsData, newCar);
   };
