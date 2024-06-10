@@ -18,13 +18,11 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(33);
-    // if (formData.name === "admin" && formData.password === "admin") {
-    navigate("/DisplayCars");
+    if (formData.name === "admin" && formData.password === "admin") {
+      navigate("/DisplayCars");
 
-    setLoggedIn(true);
-    // navigate("/DisplayCars"); // Uncomment this line if needed
-    // }
+      // navigate("/DisplayCars"); // Uncomment this line if needed
+    }
   };
 
   const handleChange = (event) => {
