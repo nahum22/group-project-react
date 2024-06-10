@@ -1,0 +1,33 @@
+body {
+  background-image: url("car.jpg");
+  background-size: 1500px 100%;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(6, 1, 1);
+}
+.name{
+    margin: auto;
+    padding: 10px;
+}
+
+
+.formWrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 30vw;
+    padding: 2vw 1vw;
+    padding-bottom: 500px;
+    border-radius: 0 0 10px 10px;
+}
+
+input {
+    border: 2px solid rgb(246, 237, 237);
+    border-radius: 10px;
+    padding: 1vw 1vw;
+    outline: none;
+    margin: 8px;
+}
