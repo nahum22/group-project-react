@@ -5,26 +5,26 @@ const url = "https://6666aa30a2f8516ff7a44b9d.mockapi.io/cars";
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [carsData, setCarsData] = useState([]);
 
-
   // Fetching the cars from mock API
-  useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        const response = await axios.get(url);
-        setCarsData(response.data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchCars();
-  }, [url]);
+  const fetchCars = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(url);
+      setCarsData(response.data);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
+    fetchCars();
+  }, []);
 
   // Adding car to API
   const handleAddCar = async (car) => {
@@ -39,34 +39,31 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-
   // Update car to API
   const handleUpdateCar = async (car) => {
     setLoading(true);
     try {
-      const response = await axios.put(`${url}/${car.id}`, car);
-      setCarsData(response.data);
+      await axios.put(`${url}/${car.id}`, car);
+      await fetchCars();
     } catch (error) {
       setError(error.message);
     } finally {
       setLoading(false);
     }
   };
-
 
   // Delete car to API
   const handleDeleteCar = async (car) => {
     setLoading(true);
     try {
-      const response = await axios.delete(`${url}/${car.id}`);
-      setCarsData(response.data);
+      await axios.delete(`${url}/${car.id}`);
+      await fetchCars();
     } catch (error) {
       setError(error.message);
     } finally {
       setLoading(false);
     }
   };
-
 
   // Create ID for car based on last ID
   const createCarId = () => {
@@ -76,14 +73,13 @@ export const AppProvider = ({ children }) => {
     return lastId + 1;
   };
 
-  
   // Adding a new car to the data
   const addCar = (car) => {
     const newCar = {
       id: createCarId(),
       ...car,
     };
-    setCarsData(...carsData, newCar);
+    setCarsData([...carsData, newCar]);
   };
 
   // Updating car, need to check- not sure working
