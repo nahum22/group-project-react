@@ -79,19 +79,21 @@ export const AppProvider = ({ children }) => {
       id: createCarId(),
       ...car,
     };
-    setCarsData([...carsData, newCar]);
+    handleAddCar(newCar);
   };
 
   // Updating car, need to check- not sure working
-  const updateCar = (id) => {
-    setCarsData(carsData.map((car) => (car.id === id ? { id, ...car } : car)));
+  const updateCar = (car) => {
+    updateCar(car);
   };
 
   // Remove car
-  const removeCar = (id) => {
-    setCarsData(carsData.filter((car) => car.id !== id));
+  const removeCar = (car) => {
+    handleDeleteCar(car);
   };
 
+
+  console.log(carsData);
   return (
     <AppContext.Provider
       value={{

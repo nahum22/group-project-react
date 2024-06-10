@@ -1,6 +1,8 @@
-import Login from "./Login";
 import DisplayCars from "./DisplayCars";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";import Login from "./Login";
+
+import "./App.css";
+
 function App() {
   return (
     <Router>
