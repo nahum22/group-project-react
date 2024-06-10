@@ -13,15 +13,12 @@ const Login = () => {
   let [loggedIn, setLoggedIn] = useState(false);
 
   const navigate = useNavigate();
-  //å=const navigate = useNavigate(); // Moved to the correct place
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (formData.name === "admin" && formData.password === "admin") {
       navigate("/DisplayCars");
-
-      // navigate("/DisplayCars"); // Uncomment this line if needed
     }
   };
 
