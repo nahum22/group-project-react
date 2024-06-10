@@ -26,16 +26,22 @@ const Login = () => {
       <div className="formWrapper">
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
-          <label htmlFor="fname">Name</label>
+          <label htmlFor="fname" className="labelInput">
+            Name
+          </label>
           <input
+            className="labelInput"
             type="text"
             id="fname"
             name="name"
             value={formData.name}
             onChange={handleChange}
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="labelInput">
+            Password
+          </label>
           <input
+            className="name"
             type="password"
             id="password"
             name="password"

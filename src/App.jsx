@@ -2,7 +2,7 @@ import Login from "./Login";
 import DisplayCars from "./DisplayCars";
 
 function App() {
-  return <DisplayCars />;
+  return <Login />;
 }
 
 export default App;
