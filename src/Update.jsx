@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "./Context";
 import { useParams } from "react-router-dom";
+import NavigationBar from "./NavigationBar";
 
 const Update = () => {
   const { CarId } = useParams();
-  const { carModel, manufacturer, year, description, userId, handleUpdateCar } =
-    useGlobalContext();
-
-  const [updateModel, setUpdateModel] = useState(carModel);
-  const [updateManufacturer, setUpdateManufacturer] = useState(manufacturer);
-  const [updateYear, setUpdateYear] = useState(year); // Convert to string if year is a number
-  const [updateDescription, setUpdateDescription] = useState(description);
-  const [updateUserId, setUpdateUserId] = useState(userId);
+  const { handleUpdateCar, carsData } = useGlobalContext();
+  let car = carsData.filter((item) => item.id == CarId);
+  car = car[0];
+  const [updateModel, setUpdateModel] = useState(car.model);
+  const [updateManufacturer, setUpdateManufacturer] = useState(
+    car.manufacturer
+  );
+  const [updateYear, setUpdateYear] = useState(car.year); // Convert to string if year is a number
+  const [updateDescription, setUpdateDescription] = useState(car.description);
+  const [updateUserId, setUpdateUserId] = useState(car.userId);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +32,7 @@ const Update = () => {
 
   return (
     <>
+      <NavigationBar />
       <form onSubmit={handleSubmit}>
         <div>Update</div>
         <label>
@@ -37,7 +41,7 @@ const Update = () => {
             type="text"
             value={updateModel}
             onChange={(e) => setUpdateModel(e.target.value)}
-            placeholder="model"
+            placeholder={car.model}
           />
         </label>
         <label>
@@ -46,7 +50,7 @@ const Update = () => {
             type="text"
             value={updateManufacturer}
             onChange={(e) => setUpdateManufacturer(e.target.value)}
-            placeholder="manufacturer"
+            placeholder={car.manufacturer}
           />
         </label>
         <label>
@@ -55,7 +59,7 @@ const Update = () => {
             type="text"
             value={updateYear}
             onChange={(e) => setUpdateYear(e.target.value)}
-            placeholder="year"
+            placeholder={car.year}
           />
         </label>
         <label>
@@ -64,7 +68,7 @@ const Update = () => {
             type="text"
             value={updateDescription}
             onChange={(e) => setUpdateDescription(e.target.value)}
-            placeholder="description"
+            placeholder={car.description}
           />
         </label>
         <label>
@@ -73,7 +77,7 @@ const Update = () => {
             type="text"
             value={updateUserId}
             onChange={(e) => setUpdateUserId(e.target.value)}
-            placeholder="userId"
+            placeholder={car.userId}
           />
         </label>
         <button type="submit">Update</button>
