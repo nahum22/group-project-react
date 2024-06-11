@@ -13,10 +13,10 @@ const DisplayCars = () => {
   return (
     <>
       <NavigationBar />
-      <table className="table">
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <table className="table">
           <tbody>
             <tr>
               <th>Manufacturer</th>
@@ -35,20 +35,14 @@ const DisplayCars = () => {
                     <button onClick={() => updatePage(car)}>update</button>
                   </td>
                   <td className="button">
-                    <button
-                      onClick={() => {
-                        removeCar(car);
-                      }}
-                    >
-                      remove
-                    </button>
+                    <button onClick={() => removeCar(car)}>remove</button>
                   </td>
                 </tr>
               );
             })}
           </tbody>
-        )}
-      </table>
+        </table>
+      )}
     </>
   );
 };

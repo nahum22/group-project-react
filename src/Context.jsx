@@ -32,7 +32,7 @@ export const AppProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.post(url, car);
-      setCarsData(response.data);
+    //  setCarsData(response.data);
     } catch (error) {
       setError(error.message);
     } finally {
