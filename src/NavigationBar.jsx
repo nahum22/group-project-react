@@ -7,13 +7,13 @@ const NavigationBar = () => {
     <nav>
       <ul>
         <li>
-          <CustomNavLink to="/">Home</CustomNavLink>
+          <CustomNavLink to="/">Login Page</CustomNavLink>
         </li>
         <li>
           <CustomNavLink to="/addCar">Add Car</CustomNavLink>
         </li>
         <li>
-          <CustomNavLink to="/about">About</CustomNavLink>
+          <CustomNavLink to="/DisplayCars">Display Cars</CustomNavLink>
         </li>
       </ul>
     </nav>

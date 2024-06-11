@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "./Context";
 import { useParams } from "react-router-dom";
+import NavigationBar from "./NavigationBar";
 
 const AddCar = () => {
-  const { CarId } = useParams();
-  const { carModel, manufacturer, year, description, userId, handleUpdateCar } =
+  const { carModel, manufacturer, year, description, userId, addCar } =
     useGlobalContext();
 
   const [updateModel, setUpdateModel] = useState(carModel);
@@ -17,18 +17,18 @@ const AddCar = () => {
     event.preventDefault();
 
     const car = {
-      id: CarId,
       model: updateModel,
       manufacturer: updateManufacturer,
       year: updateYear,
       description: updateDescription,
       userId: updateUserId,
     };
-    handleUpdateCar(car);
+    addCar(car);
   };
 
   return (
     <>
+      <NavigationBar />
       <form onSubmit={handleSubmit}>
         <div>Update</div>
         <label>
