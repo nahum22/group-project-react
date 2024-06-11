@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "./Context";
 import { useParams } from "react-router-dom";
 
-const Update = () => {
+const AddCar = () => {
   const { CarId } = useParams();
   const { carModel, manufacturer, year, description, userId, handleUpdateCar } =
     useGlobalContext();
@@ -82,4 +82,4 @@ const Update = () => {
   );
 };
 
-export default Update;
+export default AddCar;

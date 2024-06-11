@@ -4,6 +4,7 @@ import Login from "./Login";
 
 import "./App.css";
 import Update from "./Update";
+import AddCar from "./AddCar";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/DisplayCars" element={<DisplayCars />} />
         <Route path="/Update/:CarId" element={<Update />} />
+        <Route path="/addCar" element={<AddCar />} />
+        <></>
       </Routes>
     </Router>
   );
