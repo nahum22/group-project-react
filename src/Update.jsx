@@ -71,7 +71,7 @@ const Update = () => {
           User ID:
           <input
             type="text"
-            value={CarId}
+            value={updateUserId}
             onChange={(e) => setUpdateUserId(e.target.value)}
             placeholder="userId"
           />
