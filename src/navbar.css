@@ -1,0 +1,42 @@
+/* App.css */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  font-size: 30px;
+  padding: 10px;
+  margin-bottom: 5vh;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 40px;
+  /* Adjusts the spacing between nav links */
+}
+
+nav li {
+  color: white;
+  text-shadow: black 3px 3px 10px;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    rgb(173, 169, 150),
+    rgb(242, 242, 242),
+    rgb(219, 219, 219),
+    rgb(234, 234, 234)
+  );
+
+  padding: 13px;
+  border-radius: 30px;
+  border: 0.5px solid black;
+}
+
+nav a,
+nav a:hover {
+  text-decoration: none;
+  color: inherit;
+}

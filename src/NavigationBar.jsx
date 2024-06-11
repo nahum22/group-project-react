@@ -1,4 +1,5 @@
 import CustomNavLink from "./CustomNavLink";
+import "./navbar.css";
 
 import React from "react";
 
