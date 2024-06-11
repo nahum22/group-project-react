@@ -2,9 +2,28 @@ import { useGlobalContext } from "./Context";
 import React from "react";
 
 import "./DisplayCars.css";
-
+import { useNavigate } from "react-router-dom";
 const DisplayCars = () => {
-  const { carsData, error, loading, addCar, removeCar } = useGlobalContext();
+  const { loading, carsData, removeCar } = useGlobalContext();
+  const navigate = useNavigate();
+  const updatePage = (car) => {
+    navigate(`/Update/${car.id}`);
+  };
+
+  const data = [
+    {
+      model: "w3434",
+      manufacturer: "audi",
+      description: "eerer",
+      userId: "3s2",
+    },
+    {
+      model: "w3434",
+      manufacturer: "audi",
+      description: "ererere",
+      userId: "3s",
+    },
+  ];
 
   return (
     <table className="table">
@@ -26,7 +45,7 @@ const DisplayCars = () => {
                 <td>{car.description}</td>
                 <td>{car.year}</td>
                 <td className="button">
-                  <button>update</button>
+                  <button onClick={() => updatePage(car)}>update</button>
                 </td>
                 <td className="button">
                   <button

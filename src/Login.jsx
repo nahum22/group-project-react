@@ -1,6 +1,8 @@
 import React from "react";
 import "./login.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Corrected import
+import { useEffect } from "react";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,10 +10,16 @@ const Login = () => {
     password: "",
   });
 
+  let [loggedIn, setLoggedIn] = useState(false);
+
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
-    // Handle form submission logic here
+
+    if (formData.name === "admin" && formData.password === "admin") {
+      navigate("/DisplayCars");
+    }
   };
 
   const handleChange = (event) => {
