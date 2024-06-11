@@ -40,3 +40,16 @@ nav a:hover {
   text-decoration: none;
   color: inherit;
 }
+
+li .active {
+  font-weight: 800;
+  color: black;
+  text-shadow: white 3px 3px 10px;
+}
+
+li:hover {
+  font-size: 30.3px;
+
+  color: black;
+  text-shadow: white 3px 3px 10px;
+}
