@@ -1,5 +1,6 @@
-import axios from "axios";
 import { createContext, useState, useContext, useEffect } from "react";
+import axios from "axios";
+
 const url = "https://6666aa30a2f8516ff7a44b9d.mockapi.io/cars";
 
 const AppContext = createContext();
@@ -82,7 +83,7 @@ export const AppProvider = ({ children }) => {
     handleAddCar(newCar);
   };
 
-  // Updating car, need to check- not sure working
+  // Updating car, need to check
   const updateCar = (car) => {
     updateCar(car);
   };
@@ -91,7 +92,6 @@ export const AppProvider = ({ children }) => {
   const removeCar = (car) => {
     handleDeleteCar(car);
   };
-
 
   console.log(carsData);
   return (

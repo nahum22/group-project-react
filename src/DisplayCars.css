@@ -1,19 +1,90 @@
-.table {
-  width: 60vw;
-  height: 100vh;
+.display-section {
+  justify-content: center;
+  align-items: center;
   display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.table {
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  border-collapse: collapse; 
-
+  display: flex;
+  height: 60vh;
+  width: 80vw;
 }
+
+tr {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  border-radius: 5px;
+}
+.table-titles {
+  height: 2rem;
+  font-size: 1.3rem;
+}
+th {
+  padding: 0 2rem;
+}
+.cars {
+  overflow-y: scroll;
+}
+
 td {
-  border: 1px solid black;
   text-align: center;
-
+  padding: 1rem;
+  border: none;
 }
-.button{
-   border: none;
-   margin: 0 3rem;
+.button {
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+  border: 1px solid transparent;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.15385;
+  border-radius: 3px;
+  text-align: center;
+  user-select: none;
+  position: relative;
+  padding: 8px 0.8em;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 13px;
+  outline: none;
+  color: #fff;
+  margin: 0;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.update {
+  background-color: #0095ff;
+}
+.update:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+.update:hover,
+.update:focus {
+  background-color: #07c;
+}
+
+.remove {
+  background-color: rgb(239, 91, 83);
+}
+.remove:active {
+  background-color: rgb(239, 91, 83);
+  box-shadow: none;
+}
+.remove:hover,
+.remove:focus {
+  background-color: rgb(192, 64, 57);
 }
