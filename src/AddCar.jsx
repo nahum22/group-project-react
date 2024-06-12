@@ -30,7 +30,7 @@ const AddCar = () => {
     <>
       <NavigationBar />
       <form onSubmit={handleSubmit}>
-        <div>Update</div>
+        <div className="headerAddCars">Add car</div>
         <label>
           Model:
           <input
@@ -76,7 +76,7 @@ const AddCar = () => {
             placeholder="userId"
           />
         </label>
-        <button type="submit">Update</button>
+        <button type="submit">Add</button>
       </form>
     </>
   );
