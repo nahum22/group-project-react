@@ -138,7 +138,6 @@ export const AppProvider = ({ children }) => {
     handleDeleteCar(car);
   };
 
-  console.log(carsData);
   return (
     <AppContext.Provider
       value={{

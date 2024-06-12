@@ -26,7 +26,7 @@ const DisplayCars = () => {
             </tr>
             {carsData.map((car) => {
               return (
-                <tr key={car.userId}>
+                <tr key={car.id}>
                   <td>{car.manufacturer}</td>
                   <td>{car.model}</td>
                   <td>{car.description}</td>
