@@ -1,0 +1,19 @@
+.add-car-section {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-car-form {
+  height: 30rem;
+}
+
+.add-car-label {
+  display: flex;
+  justify-content: start;
+}
+input {
+  text-transform: capitalize;
+}

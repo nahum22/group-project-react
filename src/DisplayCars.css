@@ -7,12 +7,14 @@
 }
 
 .table {
-  margin: auto;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   font-size: 0.8rem;
   display: flex;
+  display: flex;
   height: 60vh;
+  margin: auto;
   width: 80vw;
 }
 
@@ -20,16 +22,28 @@ tr {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.6px);
   border-radius: 5px;
+  width: 100%;
 }
+
+.table-head {
+  width: 100%;
+}
+
 .table-titles {
-  height: 2rem;
+  justify-content: space-around;
   font-size: 1.3rem;
+  display: flex;
+  height: 2rem;
+  width: 100%;
 }
+
 th {
   padding: 0 2rem;
 }
 .cars {
   overflow-y: scroll;
+  width: 100%;
+  height: 50vh;
 }
 
 td {
@@ -37,6 +51,12 @@ td {
   padding: 1rem;
   border: none;
 }
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
 .button {
   font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
     sans-serif;
@@ -47,16 +67,14 @@ td {
   box-sizing: border-box;
   display: inline-block;
   text-decoration: none;
-  white-space: nowrap;
-  line-height: 1.15385;
   border-radius: 3px;
   text-align: center;
   user-select: none;
   position: relative;
-  padding: 8px 0.8em;
+  padding: 0.5rem 0.8em;
   font-weight: 400;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 0.7rem;
   outline: none;
   color: #fff;
   margin: 0;

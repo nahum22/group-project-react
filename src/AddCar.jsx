@@ -1,7 +1,8 @@
-import React, { useState } from "react";
 import { useGlobalContext } from "./Context";
-import { useParams } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
+import React, { useState } from "react";
+
+import "./AddCar.css";
 
 const AddCar = () => {
   const { carModel, manufacturer, year, description, userId, addCar } =
@@ -29,55 +30,48 @@ const AddCar = () => {
   return (
     <>
       <NavigationBar />
-      <form onSubmit={handleSubmit}>
-        <div className="headerAddCars">Add car</div>
-        <label>
-          Model:
+      <section className="add-car-section">
+        <form className="add-car-form" onSubmit={handleSubmit}>
+          <label className="add-car-label">Model:</label>
           <input
             type="text"
             value={updateModel}
             onChange={(e) => setUpdateModel(e.target.value)}
             placeholder="model"
           />
-        </label>
-        <label>
-          Manufacturer:
+          <label className="add-car-label">Manufacturer:</label>
           <input
             type="text"
             value={updateManufacturer}
             onChange={(e) => setUpdateManufacturer(e.target.value)}
             placeholder="manufacturer"
           />
-        </label>
-        <label>
-          Year:
+          <label className="add-car-label">Year:</label>
           <input
             type="text"
             value={updateYear}
             onChange={(e) => setUpdateYear(e.target.value)}
             placeholder="year"
           />
-        </label>
-        <label>
-          Description:
+          <label className="add-car-label">Description:</label>
           <input
             type="text"
             value={updateDescription}
             onChange={(e) => setUpdateDescription(e.target.value)}
             placeholder="description"
           />
-        </label>
-        <label>
-          User ID:
+          <label className="add-car-label">User ID:</label>
           <input
             type="text"
             value={updateUserId}
             onChange={(e) => setUpdateUserId(e.target.value)}
             placeholder="userId"
           />
-        </label>
-        <button type="submit">Add</button>
-      </form>
+          <button className="button update" type="submit">
+            Add
+          </button>
+        </form>
+      </section>
     </>
   );
 };
