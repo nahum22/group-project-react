@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import axios from "axios";
-
+import { toast } from "react-toastify";
 const url = "https://6666aa30a2f8516ff7a44b9d.mockapi.io/cars";
 
 const AppContext = createContext();
@@ -18,6 +18,15 @@ export const AppProvider = ({ children }) => {
       setCarsData(response.data);
     } catch (error) {
       setError(error.message);
+      toast.error(error.message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } finally {
       setLoading(false);
     }
@@ -32,9 +41,21 @@ export const AppProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.post(url, car);
-    //  setCarsData(response.data);
+      toast.success("Successfully created!", {
+        position: "top-center",
+      });
+      //  setCarsData(response.data);
     } catch (error) {
       setError(error.message);
+      toast.error(error.message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } finally {
       setLoading(false);
     }
@@ -46,8 +67,20 @@ export const AppProvider = ({ children }) => {
     try {
       await axios.put(`${url}/${car.id}`, car);
       await fetchCars();
+      toast.success("Successfully updated!", {
+        position: "top-center",
+      });
     } catch (error) {
       setError(error.message);
+      toast.error(error.message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } finally {
       setLoading(false);
     }
@@ -59,8 +92,20 @@ export const AppProvider = ({ children }) => {
     try {
       await axios.delete(`${url}/${car.id}`);
       await fetchCars();
+      toast.success("Successfully deleated car!", {
+        position: "top-center",
+      });
     } catch (error) {
       setError(error.message);
+      toast.error(error.message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } finally {
       setLoading(false);
     }

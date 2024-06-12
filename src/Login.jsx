@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom"; // Corrected import
 import { useState } from "react";
-
+import { ToastContainer } from "react-toastify";
 import "./login.css";
-
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 const Login = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,6 +19,16 @@ const Login = () => {
 
     if (formData.name === "admin" && formData.password === "admin") {
       navigate("/DisplayCars");
+    } else {
+      toast.error("login failes. please check user name and password", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
@@ -29,41 +40,44 @@ const Login = () => {
   };
 
   return (
-    <section className="login-section">
-      <div className="formWrapper">
-        <form onSubmit={handleSubmit}>
-          <h1>Login</h1>
-          <div className="input-container">
-            <label htmlFor="fname" className="labelInput">
-              Name
-            </label>
+    <>
+      <ToastContainer />
+      <section className="login-section">
+        <div className="formWrapper">
+          <form onSubmit={handleSubmit}>
+            <h1>Login</h1>
+            <div className="input-container">
+              <label htmlFor="fname" className="labelInput">
+                Name
+              </label>
+              <input
+                type="text"
+                id="fname"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <label htmlFor="password" className="labelInput">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
             <input
-              type="text"
-              id="fname"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
+              className="submit"
+              name="submit"
+              type="submit"
+              value="Submit"
             />
-            <label htmlFor="password" className="labelInput">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-            />
-          </div>
-          <input
-            className="submit"
-            name="submit"
-            type="submit"
-            value="Submit"
-          />
-        </form>
-      </div>
-    </section>
+          </form>
+        </div>
+      </section>
+    </>
   );
 };
 
