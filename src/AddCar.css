@@ -1,4 +1,5 @@
-.add-car-section {
+.add-car-section,
+.updateCar {
   width: 100%;
   height: 70vh;
   display: flex;
@@ -6,11 +7,12 @@
   align-items: center;
 }
 
-.add-car-form {
+.add-car-form,.update-car-form {
   height: 30rem;
 }
 
-.add-car-label {
+.add-car-label,
+.update-car-label {
   display: flex;
   justify-content: start;
 }
